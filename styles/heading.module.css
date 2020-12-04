@@ -45,6 +45,7 @@
         flex-direction: column;
         justify-content: center;
         transform: translateY(5em);
+        z-index: 101;
     }
 
     .heading > div:first-child {

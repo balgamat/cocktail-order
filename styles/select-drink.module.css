@@ -1,0 +1,240 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.content {
+  animation: fadeIn 0.3s forwards;
+  animation-delay: 0.7s;
+  position: absolute;
+  opacity: 0;
+}
+.content::before {
+  background: linear-gradient(black, rgba(0, 0, 0, 0));
+  content: '';
+  height: 6em;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 99;
+}
+.content::after {
+  background: linear-gradient(rgba(0, 0, 0, 0), black 80%);
+  content: '';
+  height: 6em;
+  position: fixed;
+  bottom: 10vh;
+  width: 100%;
+}
+.content > ul {
+  list-style-type: none;
+  text-align: right;
+}
+@media (max-width: 1023px) {
+  .content {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    left: 20vw;
+    padding: 12em 2em 10em;
+    position: absolute;
+    width: 70vw;
+    overflow: scroll;
+  }
+  .content::before {
+    background: linear-gradient(black 20%, rgba(0, 0, 0, 0));
+    width: 100vw;
+    height: 12em;
+    z-index: 99;
+  }
+  .content::after {
+    bottom: 25vh;
+  }
+}
+@media (min-width: 1024px) {
+  .content {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    top: 0;
+    left: 45%;
+    padding: 10em 2em 10em;
+    position: absolute;
+    width: 50vw;
+    text-wrap: normal;
+    overflow: scroll;
+  }
+
+  .content::after {
+    bottom: 0;
+    right: 0;
+    height: 12em;
+    width: 50vw;
+  }
+}
+
+/*Ingredient Name*/
+.ingredientName > h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 8em;
+  margin: 0 0.2em 0 0;
+  line-height: 1;
+  transform: rotate(-5deg);
+}
+.ingredientName > span {
+  font-family: 'Abril Fatface', serif;
+  font-size: 3.2em;
+  font-weight: 100;
+  line-height: 0.8;
+  margin: 0 0 0 1.5em;
+}
+@keyframes animateIngredientEntree {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-5deg);
+  }
+}
+.ingredientName {
+  animation: animateIngredientEntree 1s forwards;
+  color: #fff;
+  transform-origin: center;
+  position: fixed;
+  top: 0.1em;
+  left: 0.1em;
+  z-index: 100;
+}
+
+/* Order List */
+.orderList {
+  position: absolute;
+  left: 0;
+  top: 20em;
+  bottom: 2em;
+  width: 30%;
+  height: 45vh;
+  overflow: hidden;
+}
+.orderList > h5 {
+  position: fixed;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 200;
+  margin-left: 1.2em;
+  max-width: 4em;
+  letter-spacing: 0.52em;
+  text-transform: uppercase;
+}
+.orderList > div {
+  position: relative;
+  margin-top: 10em;
+  height: 100%;
+  overflow-y: scroll;
+}
+.orderList > div > ul {
+  list-style-type: none;
+  text-align: left;
+}
+@media (max-width: 1023px) {
+  .orderList {
+    position: absolute;
+    left: 0;
+    top: 70vh;
+    width: 70%;
+    height: 28vh;
+    z-index: 200;
+  }
+  .orderList > h5 {
+    position: fixed;
+    color: #fff;
+    font-size: 1.7em;
+    font-weight: 300;
+    margin-top: 0;
+    margin-left: 1em;
+    max-width: 4em;
+    letter-spacing: 0.52em;
+    text-transform: uppercase;
+  }
+  .orderList > div {
+    position: relative;
+    margin-top: 8em;
+    margin-left: -1.5em;
+    height: calc(28vh - 10em);
+    overflow-y: scroll;
+  }
+}
+
+/* Nav */
+.navigation {
+  position: fixed;
+  z-index: 101;
+  bottom: 3.5em;
+  right: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 20vh;
+}
+
+.navigation > a {
+  color: #fff;
+  font-family: 'Abril Fatface', serif;
+  font-size: 3em;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.navigation > a:nth-child(1) {
+  color: #000;
+}
+
+
+.navigation > a:nth-child(2) {
+  font-size: 1.8em;
+}
+
+.navigation > a:hover {
+  transition: all 0.5s;
+  color: #000;
+  cursor: pointer;
+  transform-origin: right;
+}
+
+.navigation > a:nth-child(1):hover {
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .navigation {
+    position: fixed;
+    z-index: 101;
+    bottom: 3.5em;
+    left: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 20vh;
+  }
+
+  .navigation > a {
+    font-size: 4em;
+  }
+
+  .navigation > a:nth-child(2) {
+    font-size: 1.8em;
+  }
+}

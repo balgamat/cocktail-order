@@ -1,0 +1,33 @@
+@keyframes scaleInItem {
+  0% {
+    opacity: 0;
+    margin-right: -100vw;
+  }
+  100% {
+    opacity: 1;
+    margin-right:0;
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.3s ease-in-out;
+}
+
+.container > h4 {
+  animation: scaleInItem 0.3s forwards;
+  opacity: 0;
+  transform-origin: right;
+  font-size: 2em;
+  margin: 0;
+}
+
+.container:hover h4 {
+  transition: all 0.3s ease-in-out;
+  color: #ec6760;
+  cursor: pointer;
+  transform-origin: right;
+  transform: rotate(2deg) scale(1.2);
+}

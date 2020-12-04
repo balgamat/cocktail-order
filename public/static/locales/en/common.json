@@ -1,9 +1,15 @@
 {
+  "BACK": "Back",
   "BAR_NAME": "Tilted",
+  "CONTINUE": "Next",
   "HEADING": "<div>Welcome to</div><h1>$t(BAR_NAME)<h1/><h2>Cocktail Bar</h2>",
-  "WELCOME_TITLE": "Welcome to {{barName}}!",
+  "INFO": "Start typing an ingredient and when you're liking what you see, press <span>Enter</span>",
   "INGREDIENT_ARIA": "Start typing to search for ingredients",
-  "START_TYPING": "Type ingredient...",
   "NO_INGREDIENTS_ALERT": "No ingredients were found, matching {{value}}",
-  "INFO": "Start typing an ingredient and when you're liking what you see, press <span>Enter</span>"
+  "SELECT_DRINK_HEADING": "<h1>{{ingredientName}}</h1><span>drinks</span>",
+  "SELECT_DRINK_TITLE": "Select your drink",
+  "SELECTED_DRINKS": "Selected drink",
+  "SELECTED_DRINKS_plural": "Selected drinks",
+  "START_TYPING": "Type ingredient...",
+  "WELCOME_TITLE": "Welcome to {{barName}}!"
 }

@@ -1,0 +1,53 @@
+@keyframes orderItemAnimation {
+  0% {
+    opacity: 0;
+    margin-left: -100vw;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+.container {
+  color: #fff;
+  width: 100%;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+}
+
+.container > h4 {
+  animation: orderItemAnimation 0.5s forwards;
+  opacity: 0;
+  transform-origin: left;
+  font-size: 2em;
+  margin: 0;
+}
+
+.container > h4 > span {
+  font-size: 2.2em;
+  margin-right: 0.2em;
+}
+
+.container:hover h4 {
+  transition: all 0.3s ease-in-out;
+  color: #000;
+  cursor: pointer;
+  transform-origin: left;
+  transform: rotate(2deg) scale(0.8);
+}
+
+@media (max-width: 1023px) {
+  .container > h4 {
+    animation: orderItemAnimation 0.5s forwards;
+    opacity: 0;
+    transform-origin: left;
+    font-size: 1.5em;
+    margin: 0;
+  }
+
+  .container > h4 > span {
+    font-size: 1.8em;
+    margin-right: 0.5em;
+  }
+}
