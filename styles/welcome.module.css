@@ -1,87 +1,87 @@
 .container {
   display: flex;
-  flex-direction: column;
   height: 100vh;
-  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
   position: relative;
+  padding: 32em 2em 0;
 }
 
-.heading > div:first-child {
-  color: #000;
-  font-weight: 200;
-  font-size: 1.8em;
-  margin: 0 0 0 3em;
-  text-transform: uppercase;
-  letter-spacing: 0.75em;
-}
-
-.heading > h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 8em;
-  margin: 0 0.2em 0 0;
-  line-height: 1;
-  transform: rotate(-5deg);
-}
-
-.heading > h2 {
-  font-family: 'Abril Fatface', serif;
-  font-size: 3.2em;
-  font-weight: 100;
-  line-height: 0.8;
-  margin: 0 0 0 1.5em;
-}
-
-@media (max-width: 1023px) {
-  @keyframes animateHeading {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(5em);
-    }
-  }
-  .heading {
-    color: #fff;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    margin-left: -45%;
-    align-items: center;
-    animation-duration: 1s;
-    animation-name: animateHeading;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: translateY(5em);
-  }
-
-  .heading > div:first-child {
-    color: #000;
-    font-weight: 300;
-    font-size: 1.3em;
-    margin: 0 0 0.2em 7em;
-    text-transform: uppercase;
-    letter-spacing: 0.8em;
+@media (min-width: 1023px) {
+  .content {
+    width: 50vw;
+    padding: 6em 4em 0;
   }
 }
 
-@media (min-width: 1024px) {
-  @keyframes animateHeading {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(25%);
-    }
+@keyframes fadeInInfo {
+  0% {
+    opacity: 0;
   }
-  .heading {
-    color: #fff;
-    align-items: center;
-    animation-duration: 1s;
-    animation-name: animateHeading;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: translateX(25%);
+  100% {
+    opacity: 1;
   }
+}
+
+.info {
+  color: #fff;
+  font-size: 2.5em;
+  animation-delay: 2s;
+  animation: fadeInInfo 4s forwards;
+}
+
+.info > span {
+  color: #ec6760;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+@keyframes fadeInInput {
+  0% {
+    transform: scale(6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ingredient {
+  animation-delay: 1s;
+  animation: fadeInInput 1s forwards;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.ingredient > span {
+  position: absolute;
+  color: #2d2d2d;
+  font-size: 3em;
+}
+
+.ingredient > span > span {
+  color: #fff;
+  font-size: 1em;
+}
+
+.ingredient > input {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 3em;
+  margin: -1px 0 0 -2px;
+  width: 100%;
+  outline: none;
+  transition: 0.3s all ease-in-out;
+}
+
+.ingredient > button {
+  visibility: hidden;
 }
