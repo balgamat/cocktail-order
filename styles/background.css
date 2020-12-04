@@ -1,0 +1,68 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background: #000;
+}
+
+@media (min-width: 1024px) {
+  @keyframes tiltBackground {
+    0% {
+      transform: skew(0);
+      opacity: 0;
+    }
+    25% {
+      transform: skew(0);
+      opacity: 0;
+    }
+    100% {
+      transform: skew(-15deg);
+      opacity: 1;
+    }
+  }
+
+  body:before {
+    animation-duration: 2s;
+    animation-name: tiltBackground;
+    background: linear-gradient(#ec6760, #ef906b);
+    bottom: 0;
+    content: '';
+    left: 55%;
+    position: absolute;
+    top: 0;
+    transform-origin: center;
+    transform: skew(-15deg);
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 1023px) {
+  @keyframes tiltBackground {
+    0% {
+      transform: skewY(0);
+      opacity: 0;
+    }
+    25% {
+      transform: skewY(0);
+      opacity: 0;
+    }
+    100% {
+      transform: skewY(-15deg);
+      opacity: 1;
+    }
+  }
+
+  body:before {
+    animation-duration: 2s;
+    animation-name: tiltBackground;
+    background: linear-gradient(#ec6760, #ef906b);
+    bottom: 85%;
+    content: '';
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    transform-origin: center;
+    transform: skewY(-15deg);
+    width: 100vw;
+  }
+}

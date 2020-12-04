@@ -1,0 +1,62 @@
+@import "background.css";
+
+* {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  * {
+    font-size: 12px;
+  }
+  .sm {
+    visibility: visible;
+  }
+  .md,
+  .lg,
+  .xl {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 640px) {
+  * {
+    font-size: 12px;
+  }
+  .sm,
+  .lg,
+  .xl {
+    visibility: hidden;
+  }
+  .md {
+    visibility: visible;
+  }
+}
+
+@media (min-width: 1024px) {
+  * {
+    font-size: 16px;
+  }
+  .sm,
+  .md,
+  .xl {
+    visibility: hidden;
+  }
+  .lg {
+    visibility: visible;
+  }
+}
+
+@media (min-width: 1280px) {
+  * {
+    font-size: 20px;
+  }
+  .sm,
+  .md,
+  .lg {
+    visibility: hidden;
+  }
+  .xl {
+    visibility: visible;
+  }
+}

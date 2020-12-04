@@ -1,11 +1,16 @@
 module.exports = {
-  purge: ['./pages/**/*.js', './components/**/*.js', './pages/**/*.tsx', './components/**/*.tsx'],
+  purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+      serif: ['Abril Fatface'],
+      display: ['Pacifico'],
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};

@@ -1,21 +1,26 @@
-import "tailwindcss/tailwind.css";
 import React from 'react';
 import { SEO } from '../components/atoms/SEO';
-import { SearchIngredients } from '../components/atoms/SearchIngredients';
+import { useTranslation } from '../i18n';
+import styles from '../styles/welcome.module.css';
 
 const Welcome = () => {
+  const { t } = useTranslation('common');
+
   return (
     <>
-      <SEO title={'Welcome to Puzzles'}/>
+      <SEO title={t('WELCOME_TITLE', { barName: t('BAR_NAME') })} />
 
       <main>
-        <div className={'flex flex-col w-screen h-screen justify-center items-center'}>
-        <h1 className={'font-sans font-extrabold text-8xl'}>Puzzles</h1>
-        <SearchIngredients/>
+        <div className={styles.container}>
+          <div className={styles.heading} dangerouslySetInnerHTML={{ __html: t('HEADING') }} />
         </div>
       </main>
     </>
-  )
-}
+  );
+};
+
+Welcome.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+});
 
 export default Welcome;

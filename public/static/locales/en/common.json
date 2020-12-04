@@ -1,0 +1,5 @@
+{
+  "BAR_NAME": "Tilted",
+  "HEADING": "<div>Welcome to</div><h1>$t(BAR_NAME)<h1/><h2>Cocktail Bar</h2>",
+  "WELCOME_TITLE": "Welcome to {{barName}}!"
+}

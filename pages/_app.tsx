@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { AppProps } from 'next/app';
+import { appWithTranslation } from '../i18n';
+import '../styles/global.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />;
 
-export default MyApp
+export default appWithTranslation(App);
