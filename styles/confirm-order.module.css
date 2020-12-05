@@ -50,10 +50,10 @@
 .orderList {
   position: absolute;
   left: 0;
-  top: 20em;
+  top: 6em;
   bottom: 2em;
   width: 30%;
-  height: 45vh;
+  height: calc(100% - 16em);
   overflow: hidden;
 }
 .orderList > h5 {
@@ -70,6 +70,7 @@
   position: relative;
   margin-top: 10em;
   height: 100%;
+  padding-bottom: 10em;
   overflow-y: scroll;
 }
 .orderList > div > ul {

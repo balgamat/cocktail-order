@@ -124,7 +124,7 @@
   top: 14em;
   bottom: 2em;
   width: 30%;
-  height: 55vh;
+  height: calc(100% - 16em);
   overflow: hidden;
 }
 .orderList > h5 {
@@ -140,7 +140,8 @@
 .orderList > div {
   position: relative;
   margin-top: 10em;
-  height: calc(55vh - 10em);
+  height: calc(100% - 20em);
+  padding-bottom: 4em;
   overflow-y: scroll;
 }
 .orderList > div > ul {
