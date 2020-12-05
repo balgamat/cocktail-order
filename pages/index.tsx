@@ -12,24 +12,27 @@ const Welcome = () => {
   const input = useRef();
   const [value, onChange, suggestion] = useIngredientSuggestion();
 
-  const onSubmit = useCallback(e => {
-    e.preventDefault();
-    if (!suggestion?.strIngredient) {
-      alert(t('NO_INGREDIENTS_ALERT', { value }));
-      onChange('');
-    } else {
-      router.push(`by-ingredient/${suggestion.strIngredient}`);
-    }
-  });
+  const onSubmit = useCallback(
+    e => {
+      e.preventDefault();
+      if (!suggestion?.strIngredient) {
+        alert(t('NO_INGREDIENTS_ALERT', { value }));
+        onChange('');
+      } else {
+        router.push(`by-ingredient/${suggestion.strIngredient}`);
+      }
+    },
+    [suggestion, onChange],
+  );
 
-  const reFocus = useCallback(() => input?.current?.focus());
+  const reFocus = useCallback(() => (input?.current as any).focus(), [input]);
 
   useEffect(() => {
     reFocus();
-  }, [input]);
+  }, [reFocus]);
 
   useEffect(() => {
-    window.localStorage.setItem('orderList', {});
+    window.localStorage.setItem('orderList', JSON.stringify({}));
   }, []);
 
   return (
@@ -46,7 +49,7 @@ const Welcome = () => {
                 {value !== '' ? suggestion?.strIngredient?.slice(value.length) : t('START_TYPING')}
               </span>
               <input
-                ref={input}
+                ref={input as any}
                 aria-label={t('INGREDIENT_ARIA')}
                 id="ingredient"
                 onChange={e => onChange(e.target.value)}

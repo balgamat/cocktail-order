@@ -44,4 +44,8 @@ const ConfirmOrder = () => {
   );
 };
 
+ConfirmOrder.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+});
+
 export default ConfirmOrder;

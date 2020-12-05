@@ -40,7 +40,7 @@ const SelectDrink = () => {
           </div>
         </div>
         <div className={selectDrink.navigation}>
-          <Link href={'/confirm-order'}>{t('CONTINUE')}</Link>
+          {!!count && <Link href={'/confirm-order'}>{t('CONTINUE')}</Link>}
           <Link href={'/'}>{t('BACK')}</Link>
         </div>
         <div className={selectDrink.content}>
@@ -50,5 +50,9 @@ const SelectDrink = () => {
     </>
   );
 };
+
+SelectDrink.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+});
 
 export default SelectDrink;
