@@ -124,7 +124,7 @@
   top: 20em;
   bottom: 2em;
   width: 30%;
-  height: 45vh;
+  height: 55vh;
   overflow: hidden;
 }
 .orderList > h5 {
@@ -140,7 +140,7 @@
 .orderList > div {
   position: relative;
   margin-top: 10em;
-  height: 100%;
+  height: calc(55vh - 10em);
   overflow-y: scroll;
 }
 .orderList > div > ul {
@@ -204,7 +204,7 @@
 
 .navigation > a:nth-child(2) {
   font-size: 1.8em;
-  color: #2d1716;
+  color: #ec6760;
 }
 
 .navigation > a:hover {
