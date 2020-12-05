@@ -28,7 +28,6 @@ const ConfirmOrder = () => {
           }}
         />
         <div className={confirmOrder.orderList}>
-          <h5>{!!count && t('SELECTED_DRINKS', { count })}</h5>
           <div>
             <ul>{Object.entries(persistedOrderList as OrderList).map(OrderItem(null))}</ul>
           </div>
