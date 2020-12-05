@@ -121,7 +121,7 @@
 .orderList {
   position: absolute;
   left: 0;
-  top: 20em;
+  top: 14em;
   bottom: 2em;
   width: 30%;
   height: 55vh;
@@ -147,6 +147,7 @@
   list-style-type: none;
   text-align: left;
 }
+
 @media (max-width: 1023px) {
   .orderList {
     position: absolute;
@@ -175,6 +176,7 @@
     overflow-y: scroll;
   }
 }
+
 
 @media (max-width: 419px) {
   .orderList {
