@@ -11,13 +11,16 @@ export type IOrderItem = [
   },
 ];
 
-export const OrderItem: (onClick: DrinkAction) => FC<IOrderItem> = onClick => ([, props]) => (
+export const OrderItem: (onClick?: DrinkAction | null) => FC<IOrderItem> = onClick => ([
+  ,
+  props,
+]) => (
   <li
     key={`order-item-${props.info.idDrink}`}
     className={orderItem.container}
-    onClick={() => onClick(props.info)}
+    onClick={onClick ? () => onClick(props.info) : undefined}
   >
-    <h4>
+    <h4 className={!!onClick ? undefined : orderItem.H4}>
       <span>{props.count}</span>
       {props.info.strDrink}
     </h4>

@@ -17,11 +17,11 @@
 }
 
 .container > h4 {
-  animation: orderItemAnimation 0.5s forwards;
-  opacity: 0;
   transform-origin: left;
   font-size: 2em;
   margin: 0;
+  opacity: 0;
+  animation: orderItemAnimation 0.5s forwards;
 }
 
 .container > h4 > span {
@@ -39,15 +39,20 @@
 
 @media (max-width: 1023px) {
   .container > h4 {
-    animation: orderItemAnimation 0.5s forwards;
-    opacity: 0;
-    transform-origin: left;
     font-size: 1.5em;
-    margin: 0;
   }
 
   .container > h4 > span {
     font-size: 1.8em;
     margin-right: 0.5em;
   }
+}
+
+.H4 {
+
+}
+
+.H4:hover {
+  color: #fff;
+  transform: none;
 }

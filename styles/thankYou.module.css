@@ -1,0 +1,86 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 101;
+}
+
+.goBack {
+  margin-top: 10em;
+}
+
+.goBack > a {
+  color: #ec6760;
+  font-family: 'Abril Fatface', serif;
+  font-size: 3em;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.goBack > a:hover {
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+  transform: scale(1.1);
+}
+
+.heading > div:first-child {
+  color: #000;
+  font-weight: 200;
+  font-size: 1.8em;
+  margin: 0 0 0 3em;
+  text-transform: uppercase;
+  letter-spacing: 0.75em;
+}
+
+.heading > h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 8em;
+  margin: 0 0.2em 0 0;
+  line-height: 1;
+  transform: rotate(-5deg);
+}
+
+.heading > h2 {
+  font-family: 'Abril Fatface', serif;
+  font-size: 3.2em;
+  font-weight: 100;
+  line-height: 0.8;
+  margin: 1em 0 0 0.4em;
+  letter-spacing: 0.35em;
+}
+
+@keyframes animateHeading {
+  0% {
+    opacity: 0;
+    transform: scale(6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.heading {
+  color: #fff;
+  opacity: 1;
+  align-items: center;
+  animation: animateHeading 1s forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(5em);
+  z-index: 101;
+}
+
+.heading > div:first-child {
+  color: #000;
+  font-weight: 300;
+  font-size: 1.3em;
+  margin: 0 0 0.2em 7em;
+  text-transform: uppercase;
+  letter-spacing: 0.8em;
+}

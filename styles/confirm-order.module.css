@@ -6,94 +6,23 @@
     opacity: 1;
   }
 }
-.content {
-  animation: fadeIn 0.3s forwards;
-  animation-delay: 0.7s;
-  position: absolute;
-  opacity: 0;
-}
-.content::before {
-  background: linear-gradient(black, rgba(0, 0, 0, 0));
-  content: '';
-  height: 6em;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  z-index: 99;
-}
-.content::after {
-  background: linear-gradient(rgba(0, 0, 0, 0), black 80%);
-  content: '';
-  height: 6em;
-  position: fixed;
-  bottom: 10vh;
-  width: 100%;
-}
-.content > ul {
-  list-style-type: none;
-  text-align: right;
-}
-@media (max-width: 1023px) {
-  .content {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    height: 75vh;
-    left: 20vw;
-    padding: 12em 2em 10em;
-    position: absolute;
-    width: 70vw;
-    overflow: scroll;
-  }
-  .content::before {
-    background: linear-gradient(black 20%, rgba(0, 0, 0, 0));
-    width: 100vw;
-    height: 12em;
-    z-index: 99;
-  }
-  .content::after {
-    bottom: 25vh;
-  }
-}
-@media (min-width: 1024px) {
-  .content {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    top: 0;
-    left: 45%;
-    padding: 10em 2em 10em;
-    position: absolute;
-    width: 50vw;
-    text-wrap: normal;
-    overflow: scroll;
-  }
-
-  .content::after {
-    bottom: 0;
-    right: 0;
-    height: 12em;
-    width: 50vw;
-  }
-}
 
 /*Ingredient Name*/
-.ingredientName > h1 {
+.heading > h1 {
   font-family: 'Pacifico', cursive;
   font-size: 8em;
   margin: 0 0.2em 0 0;
   line-height: 1;
   transform: rotate(-5deg);
 }
-.ingredientName > span {
+.heading > span {
   font-family: 'Abril Fatface', serif;
   font-size: 3.2em;
   font-weight: 100;
   line-height: 0.8;
   margin: 0 0 0 1.5em;
 }
-@keyframes animateIngredientEntree {
+@keyframes animateHeadingEntree {
   0% {
     opacity: 0;
     transform: rotate(0deg);
@@ -107,13 +36,13 @@
     transform: rotate(-5deg);
   }
 }
-.ingredientName {
-  animation: animateIngredientEntree 1s forwards;
+.heading {
+  animation: animateHeadingEntree 1s forwards;
   color: #fff;
   transform-origin: center;
   position: fixed;
-  top: 0.1em;
-  left: 0.1em;
+  top: 1em;
+  left: 2em;
   z-index: 100;
 }
 
@@ -151,9 +80,9 @@
   .orderList {
     position: absolute;
     left: 0;
-    top: 70vh;
+    top: 20vh;
     width: 70%;
-    height: 28vh;
+    height: 60vh;
     z-index: 200;
   }
   .orderList > h5 {
@@ -171,7 +100,7 @@
     position: relative;
     margin-top: 8em;
     margin-left: -1.5em;
-    height: calc(28vh - 10em);
+    height: calc(60vh - 10em);
     overflow-y: scroll;
   }
 }
@@ -197,25 +126,15 @@
   text-decoration: none;
 }
 
-.navigation > a:nth-child(1) {
-  color: #fff;
-}
-
-
-.navigation > a:nth-child(2) {
-  font-size: 1.8em;
-  color: #2d1716;
+.navigation > a {
+  color: #ec6760;
 }
 
 .navigation > a:hover {
   transition: all 0.5s;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   transform: scale(1.1);
-}
-
-.navigation > a:nth-child(1):hover {
-  color: #fff;
 }
 
 @media (min-width: 1024px) {
@@ -232,10 +151,42 @@
   }
 
   .navigation > a {
-    font-size: 4em;
+    font-size: 1.8em;
+  }
+}
+
+.confirm {
+  position: fixed;
+  bottom: 0.3em;
+  right: 0.5em;
+  font-family: 'Abril Fatface', serif;
+  font-size: 8em;
+  margin: 0;
+  transform: rotate(-75deg) translateX(40vh);
+}
+
+.confirm:hover {
+  transition: 0.3s all;
+  color: #fff;
+  transform: rotate(-75deg) translateX(40vh) scale(1.2);
+}
+
+@media (max-width: 1023px) {
+  .confirm {
+    color: #fff;
+    position: fixed;
+    bottom: 1.5em;
+    right: 0.3em;
+    font-family: 'Abril Fatface', serif;
+    font-size: 5em;
+    margin: 0;
+    transform: none;
+    z-index: 101;
   }
 
-  .navigation > a:nth-child(2) {
-    font-size: 1.8em;
+  .confirm:hover {
+    cursor: pointer;
+    transition: 0.3s all;
+    transform: scale(1.1);
   }
 }

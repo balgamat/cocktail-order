@@ -1,46 +1,43 @@
-import { useDrinksByIngredient } from '../util/useDrinksByIngredient';
 import { SEO } from '../components/atoms/SEO';
-import React, { useEffect } from 'react';
-import selectDrink from '../styles/select-drink.module.css';
+import React, { useCallback } from 'react';
+import confirmOrder from '../styles/confirm-order.module.css';
 import { useTranslation } from '../i18n';
-import { DrinkInfo } from '../components/molecules/DrinkInfo';
-import { useRouter } from 'next/router';
-import { useOrderList } from '../util/useOrderList';
+import { OrderList } from '../util/useOrderList';
 import { OrderItem } from '../components/molecules/OrderItem';
-import Link from 'next/link';
 import { useLocalStorage } from '../util/useLocalStorage';
+import { useRouter } from 'next/router';
 
 const ConfirmOrder = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
-  const ingredientName = router.query?.ingredient as string;
-  const drinks: any[] = [];
-  const [persistedOrderList, setPersistedOrderList] = useLocalStorage('orderList', {});
-  const [orderList, add, remove] = useOrderList(persistedOrderList);
-  const count = Object.keys(orderList).length;
+  const [persistedOrderList] = useLocalStorage('orderList', {});
+  const count = Object.keys(persistedOrderList).length;
 
-  useEffect(() => {
-    setPersistedOrderList(orderList);
-  }, [orderList]);
+  const onConfirm = useCallback(() => {
+    if (confirm(t('ORDER_PROMPT', { count }))) router.push(`/thank-you`);
+  }, []);
 
   return (
     <>
-      <SEO title={t('SELECT_DRINK_TITLE')} />
+      <SEO title={t('CONFIRMATION_TITLE')} />
       <main>
         <div
-          className={selectDrink.ingredientName}
+          className={confirmOrder.heading}
           dangerouslySetInnerHTML={{
-            __html: t('SELECT_DRINK_HEADING', { ingredientName }),
+            __html: t('CONFIRMATION_HEADING'),
           }}
         />
-        <div className={selectDrink.orderList}>
+        <div className={confirmOrder.orderList}>
           <h5>{!!count && t('SELECTED_DRINKS', { count })}</h5>
           <div>
-            <ul>{Object.entries(orderList).map(OrderItem(remove))}</ul>
+            <ul>{Object.entries(persistedOrderList as OrderList).map(OrderItem(null))}</ul>
           </div>
         </div>
-        <div className={selectDrink.navigation}>
-          <Link href={'/'}>{t('BACK')}</Link>
+        <div className={confirmOrder.navigation}>
+          <a onClick={() => window.history.back()}>{t('BACK_TO_SELECTION')}</a>
+        </div>
+        <div onClick={onConfirm} className={confirmOrder.confirm}>
+          {t('CONFIRM_ORDER')}
         </div>
       </main>
     </>

@@ -10,6 +10,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
     if (router.route === '/') classes.push('welcome');
     if (router.route.startsWith('/by-ingredient')) classes.push('select-drink');
     if (router.route === '/confirm-order') classes.push('confirm-order');
+    if (router.route === '/thank-you') classes.push('thank-you');
 
     if (router.query?.back === 'true') classes.push('back');
 
