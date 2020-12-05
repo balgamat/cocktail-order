@@ -176,6 +176,29 @@
   }
 }
 
+@media (max-width: 419px) {
+  .orderList {
+    height: 30vh;
+  }
+
+  .orderList > h5 {
+    position: fixed;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 0 0 0 1em;
+    max-width: 4em;
+    letter-spacing: 0.52em;
+    text-transform: uppercase;
+  }
+  .orderList > div {
+    position: relative;
+    margin: 4em 0 0 -1.5em;
+    height: calc(30vh - 5em);
+    overflow-y: scroll;
+  }
+}
+
 /* Nav */
 .navigation {
   position: fixed;

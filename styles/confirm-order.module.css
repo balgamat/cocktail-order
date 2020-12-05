@@ -109,7 +109,7 @@
 .navigation {
   position: fixed;
   z-index: 101;
-  bottom: 3.5em;
+  bottom: 3em;
   right: 2em;
   display: flex;
   flex-direction: column;
@@ -119,14 +119,10 @@
 }
 
 .navigation > a {
-  color: #fff;
   font-family: 'Abril Fatface', serif;
   font-size: 3em;
   font-weight: 900;
   text-decoration: none;
-}
-
-.navigation > a {
   color: #ec6760;
 }
 
@@ -172,13 +168,53 @@
 }
 
 @media (max-width: 1023px) {
+  .navigation > a {
+    font-family: 'Abril Fatface', serif;
+    font-size: 3em;
+    font-weight: 900;
+    text-decoration: none;
+    color: #ec6760;
+  }
+
   .confirm {
     color: #fff;
     position: fixed;
     bottom: 1.5em;
-    right: 0.3em;
+    right: 0.5em;
     font-family: 'Abril Fatface', serif;
     font-size: 5em;
+    margin: 0;
+    transform: none;
+    z-index: 101;
+  }
+
+  .confirm:hover {
+    cursor: pointer;
+    transition: 0.3s all;
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 419px) {
+  .navigation {
+    bottom: 1.5em;
+  }
+
+  .navigation > a {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-decoration: none;
+    color: #ec6760;
+  }
+
+  .confirm {
+    color: #fff;
+    position: fixed;
+    bottom: 1em;
+    right: 0.7em;
+    font-family: 'Abril Fatface', serif;
+    font-size: 3.5em;
     margin: 0;
     transform: none;
     z-index: 101;
