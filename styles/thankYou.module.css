@@ -64,6 +64,7 @@
     transform: scale(1);
   }
 }
+
 .heading {
   color: #fff;
   opacity: 1;
@@ -83,4 +84,14 @@
   margin: 0 0 0.2em 7em;
   text-transform: uppercase;
   letter-spacing: 0.8em;
+}
+
+@media (max-width: 767px) {
+  .heading > h1 {
+    font-size: 4em;
+  }
+
+  .heading > h2 {
+    font-size: 2em;
+  }
 }
